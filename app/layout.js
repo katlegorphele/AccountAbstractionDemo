@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./components/Header";
+import { ThirdwebProvider } from "thirdweb/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,12 +21,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <ThirdwebProvider>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Header/>
+        <main>{children}</main>
       </body>
     </html>
+    </ThirdwebProvider>
   );
 }
