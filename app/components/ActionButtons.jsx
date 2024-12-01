@@ -6,10 +6,11 @@ import { client } from "../client";
 import { defineChain, prepareContractCall, sendTransaction, getContract, readContract } from 'thirdweb';
 
 const contract = getContract({
-    client,
+    client: client,
     address: "0x07Ae34602Ea55dC4540307454904118d001bE390",
     chain: defineChain(44787),
 });
+
 
 const ActionButtons = () => {
     const account = useActiveAccount();
